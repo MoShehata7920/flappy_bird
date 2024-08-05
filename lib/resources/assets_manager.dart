@@ -1,21 +1,21 @@
 const String imagePath = 'assets/images';
 
 class Assets {
-  static const background = '$imagePath/background.png';
-  static const ground = '$imagePath/ground.png';
-  static const clouds = '$imagePath/clouds.png';
-  static const pipe = '$imagePath/pipe.png';
-  static const pipeRotated = '$imagePath/pipe_rotated.png';
+  static const background = 'background.png';
+  static const ground = 'ground.png';
+  static const clouds = 'clouds.png';
+  static const pipe = 'pipe.png';
+  static const pipeRotated = 'pipe_rotated.png';
 
-  static const birdMidFlap = '$imagePath/bird_midFlap.png';
-  static const birdUpFlap = '$imagePath/bird_upFlap.png';
-  static const birdDownFlap = '$imagePath/bird_downFlap.png';
+  static const birdMidFlap = 'bird_midFlap.png';
+  static const birdUpFlap = 'bird_upFlap.png';
+  static const birdDownFlap = 'bird_downFlap.png';
 
   static const gameOver = '$imagePath/gameOver.png';
   static const menu = '$imagePath/menu.jpg';
   static const message = '$imagePath/message.png';
 
-  static const flying = '$imagePath/fly.wav';
-  static const collision = '$imagePath/collision.wav';
-  static const point = '$imagePath/point.wav';
+  static const flying = 'fly.wav';
+  static const collision = 'collision.wav';
+  static const point = 'point.wav';
 }
