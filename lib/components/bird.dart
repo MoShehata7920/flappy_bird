@@ -47,7 +47,13 @@ class Bird extends SpriteGroupComponent<BirdMovement>
   }
 
   void gameOver() {
+    gameRef.overlays.add('gameOver');
     gameRef.pauseEngine();
+    game.isHit = true;
+  }
+
+  void reset() {
+    position = Vector2(50, gameRef.size.y / 2 - size.y / 2);
   }
 
   @override

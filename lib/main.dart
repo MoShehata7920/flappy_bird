@@ -2,22 +2,18 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flappy_bird/game/flappy_bird_game.dart';
+import 'package:flappy_bird/screens/game_over_screen.dart';
+import 'package:flappy_bird/screens/main_menu_screen.dart';
 
 void main() {
   final game = FlappyBirdGame();
 
-  runApp(GameWidget(game: game));
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Flappy Bird',
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(),
-    );
-  }
+  runApp(GameWidget(
+    game: game,
+    initialActiveOverlays: const [MainMenuScreen.id],
+    overlayBuilderMap: {
+      'mainMenu': (context, _) => MainMenuScreen(game: game),
+      'gameOver': (context, _) => GameOverScreen(game: game),
+    },
+  ));
 }
