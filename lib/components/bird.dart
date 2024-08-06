@@ -1,5 +1,9 @@
 import 'package:flame/components.dart';
+import 'package:flame/effects.dart';
+import 'package:flutter/material.dart';
+
 import 'package:flappy_bird/game/bird_movement.dart';
+import 'package:flappy_bird/game/configuration.dart';
 import 'package:flappy_bird/game/flappy_bird_game.dart';
 import 'package:flappy_bird/resources/assets_manager.dart';
 
@@ -21,5 +25,20 @@ class Bird extends SpriteGroupComponent<BirdMovement>
       BirdMovement.up: birdUpFlap,
       BirdMovement.down: birdDownFlap,
     };
+  }
+
+  void fly() {
+    add(MoveByEffect(
+      Vector2(0, Config.gravity),
+      EffectController(duration: 0.2, curve: Curves.decelerate),
+      onComplete: () => current = BirdMovement.down,
+    ));
+    current = BirdMovement.up;
+  }
+
+  @override
+  void update(double dt) {
+    super.update(dt);
+    position.y += Config.birdVelocity * dt;
   }
 }
