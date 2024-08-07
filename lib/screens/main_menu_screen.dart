@@ -28,7 +28,34 @@ class MainMenuScreen extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          child: Image.asset(Assets.message),
+          child: Column(
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.3,
+              ),
+              Image.asset(Assets.message),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.1,
+              ),
+              const Column(
+                children: [
+                  Text(
+                    "Developed By",
+                    style: TextStyle(color: Color(0xFFFFFF00)),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Mohamed Shehata Torky",
+                    style: TextStyle(
+                      color: Color(0xFF00008B),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
